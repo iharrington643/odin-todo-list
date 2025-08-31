@@ -6,7 +6,8 @@
     <title>Todo List</title>
 </head>
 <body>
-    <div class="project-bar">
+    <div id="project-bar">
+        <div class="page-heading">Easy To-Do</div>
         <div class="priority-container">
             <div class="priority-label">
                 <h1>Priority</h1>
@@ -20,6 +21,10 @@
         </div>
     </div>
 
-    <div class="project-board"></div>
+    <div id="project-board">
+        <form method="get">
+            <input type="text" id="list-name" name="user-name" placeholder="New Project Name" maxlength="37">
+        </form>
+    </div>
 </body>
 </html>
