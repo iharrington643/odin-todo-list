@@ -10,19 +10,21 @@ body {
     display: grid;
     gap: 35px;
     grid-template-columns: 1fr 4fr;
-    height: 100vh;
+    height: auto;
 }
 
 #project-bar {
     padding: 10%;
     background-color: lightblue;
     grid-column: 1 / 2;
-    min-width: 200px;
+    min-width: 180px;
 }
 
 #project-board {
     padding: 20px;
     grid-column: 2 / 3;
+    position: relative;
+    min-width: 380px;
 }
 
 h1 {
@@ -52,7 +54,7 @@ h1 {
 }
 
 .list-name {
-    border: none;
+    font-weight: 550;
     font-size: 40px;
     background-color: transparent;
 }
@@ -66,26 +68,74 @@ input:focus {
     flex-direction: column;
     width: 100%;
     height: 95vh;
+    overflow-y: auto;
 }
 
 .add-task-button, .create-list-button {
     margin-top: 20px;
-    height: 45px;
-    width: 45px;
+    height: 65px;
+    width: 65px;
     border-radius: 50%;
     border: 1px solid rgb(69, 124, 142);
     background-color: lightblue;
+    position: absolute;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.add-task-button {
+    bottom: 30px;
+    left: 20px;
+}
+
+.create-list-button {
+    bottom: 30px;
+    right: 50px;
 }
 
 .task-box {
     margin-top: 20px;
-    height: 60px;
-    width: 95%;
+    height: 80px;
+    width: 97%;
     border: 2px solid lightgray;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.list-desc {
-    border-color: transparent;
-    white-space: nowrap;
+input {
+    border: none;
+    background-color: transparent;
+}
+
+.task-name {
+    font-weight: 550;
+    font-size: 16px;
+    position: absolute;
+    left: 60px;
+    top: 15px;
+    width: 90%;
+}
+
+.task-desc {
+    font-size: 12px;
+    position: absolute;
+    left: 60px;
+    top: 40px;
+    width: 90%;
+}
+
+.checkbox {
+    position: absolute;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.task-container {
+    height: 1000px;
+    overflow-y: auto;
 }
