@@ -59,5 +59,10 @@ export function loadNewProject() {
         dueDate.type = "date";
         dueDate.classList.add('due-date');
         taskBox.appendChild(dueDate);
+
+        const priorityStar = document.createElement('input');
+        priorityStar.type = "checkbox";
+        priorityStar.classList.add('priority-star');
+        taskBox.appendChild(priorityStar);
     });
 }
