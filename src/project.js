@@ -64,5 +64,13 @@ export function loadNewProject() {
         priorityStar.type = "checkbox";
         priorityStar.classList.add('priority-star');
         taskBox.appendChild(priorityStar);
+
+        priorityStar.addEventListener('change', function() {
+            if (priorityStar.checked) {
+                taskContainer.prepend(taskBox);
+            } else {
+                taskContainer.append(taskBox);
+            }
+        });
     });
 }
