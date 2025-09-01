@@ -46,7 +46,7 @@ export function loadNewProject() {
         const taskName = document.createElement('input');
         taskName.classList.add('task-name');
         taskName.placeholder = 'New Task Name';
-        taskName.maxLength = "37";
+        taskName.maxLength = "86";
         taskBox.appendChild(taskName);
 
         const taskDesc = document.createElement('input');
@@ -54,5 +54,10 @@ export function loadNewProject() {
         taskDesc.placeholder = 'Describe your task...';
         taskDesc.maxLength = '130';
         taskBox.appendChild(taskDesc);
+
+        const dueDate = document.createElement('input');
+        dueDate.type = "date";
+        dueDate.classList.add('due-date');
+        taskBox.appendChild(dueDate);
     });
 }
