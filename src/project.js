@@ -16,17 +16,10 @@ export function loadNewProject() {
     listDesc.maxLength = "130";
     projectForm.appendChild(listDesc);
 
-    const taskBox = document.createElement('div');
-    taskBox.classList.add('task-box');
-    projectForm.appendChild(taskBox);
-
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    taskBox.appendChild(checkbox);
-
     const addTaskButton = document.createElement('button');
     addTaskButton.classList.add('add-task-button');
     addTaskButton.textContent = '+';
+    addTaskButton.type = 'button';
     projectForm.appendChild(addTaskButton);
     
     const createListButton = document.createElement('button');
@@ -34,5 +27,32 @@ export function loadNewProject() {
     createListButton.textContent = '✓';
     projectForm.appendChild(createListButton);
 
+    const taskContainer = document.createElement('div');
+    taskContainer.classList.add('task-container');
+    projectForm.appendChild(taskContainer);
+
     projectBoard.appendChild(projectForm);
+
+    addTaskButton.addEventListener('click', function() {
+        const taskBox = document.createElement('div');
+        taskBox.classList.add('task-box');
+        taskContainer.appendChild(taskBox);
+
+        const checkbox = document.createElement('input');
+        checkbox.classList.add('checkbox');
+        checkbox.type = 'checkbox';
+        taskBox.appendChild(checkbox);
+
+        const taskName = document.createElement('input');
+        taskName.classList.add('task-name');
+        taskName.placeholder = 'New Task Name';
+        taskName.maxLength = "37";
+        taskBox.appendChild(taskName);
+
+        const taskDesc = document.createElement('input');
+        taskDesc.classList.add('task-desc');
+        taskDesc.placeholder = 'Describe your task...';
+        taskDesc.maxLength = '130';
+        taskBox.appendChild(taskDesc);
+    });
 }
