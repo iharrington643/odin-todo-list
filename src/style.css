@@ -95,8 +95,9 @@ input:focus {
 
 .task-box {
     margin-top: 20px;
-    height: 85px;
-    width: 97%;
+    height: 90px;
+    min-width: 400px;
+    max-width: 1040px;
     border: 2px solid lightgray;
     border-radius: 10px;
     display: flex;
@@ -104,6 +105,7 @@ input:focus {
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-right: 20px;
 }
 
 input {
@@ -117,7 +119,7 @@ input {
     position: absolute;
     left: 60px;
     top: 10px;
-    width: 85%;
+    width: 65%;
 }
 
 .task-desc {
@@ -125,7 +127,7 @@ input {
     position: absolute;
     left: 60px;
     top: 35px;
-    width: 85%;
+    width: 65%;
     overflow-wrap: break-word;
 }
 
@@ -150,7 +152,7 @@ input {
 
 .due-date {
     position: absolute;
-    left: 58px;
+    left: 57px;
     top: 55px;
     font-size: 12px;
     color: black;
@@ -159,7 +161,8 @@ input {
 .priority-star {
     appearance: none;
     position: absolute;
-    right: 10px;
+    right: 36px;
+    bottom: 7px;
     width: 30px;
     height: 30px;
     background-image: url('./images/star-unchecked.svg');
@@ -171,4 +174,19 @@ input {
 
 .priority-star:checked {
     background-image: url('./images/star-checked.svg');
+}
+
+.trash-bin {
+    appearance: none;
+    position: absolute;
+    right: 8px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url('./images/trash-bin.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: transparent;
 }
