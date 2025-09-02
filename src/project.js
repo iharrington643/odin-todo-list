@@ -77,5 +77,9 @@ export function loadNewProject() {
                 taskContainer.append(taskBox);
             }
         });
+
+        trashBin.addEventListener('click', function() {
+            taskBox.remove();
+        });
     });
 }
