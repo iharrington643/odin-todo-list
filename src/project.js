@@ -46,13 +46,13 @@ export function loadNewProject() {
         const taskName = document.createElement('input');
         taskName.classList.add('task-name');
         taskName.placeholder = 'New Task Name';
-        taskName.maxLength = "86";
+        taskName.maxLength = "75";
         taskBox.appendChild(taskName);
 
         const taskDesc = document.createElement('input');
         taskDesc.classList.add('task-desc');
         taskDesc.placeholder = 'Describe your task...';
-        taskDesc.maxLength = '130';
+        taskDesc.maxLength = '110';
         taskBox.appendChild(taskDesc);
 
         const dueDate = document.createElement('input');
@@ -64,6 +64,11 @@ export function loadNewProject() {
         priorityStar.type = "checkbox";
         priorityStar.classList.add('priority-star');
         taskBox.appendChild(priorityStar);
+
+        const trashBin = document.createElement('button');
+        trashBin.classList.add('trash-bin');
+        trashBin.type = 'button';
+        taskBox.appendChild(trashBin);
 
         priorityStar.addEventListener('change', function() {
             if (priorityStar.checked) {
